@@ -1,0 +1,40 @@
+<apex:page >
+    <apex:includeScript value="{!$Resource.jQuery}" />
+    <apex:includeScript value="{!$Resource.Angular}" />
+    <apex:includeScript value="{!$Resource.JSforce}" />
+    <apex:include pageName="JSforceSearchCss" />
+    <div id="vf-page" class="ng-app">
+        <div ng-controller="mainCtrl">
+            <apex:form id="form">
+                <apex:pageBlock title="JSforce Search" id="block">
+                    <input class="form-control inputForm" type="text"  placeholder="Search" ng-model="query" />
+                    <table class="webparkList">
+                        <thead>
+                            <tr>
+                                <th class="numberCol">
+                                    <apex:outputText value="" />
+                                </th>
+                                <th>
+                                    <apex:outputText value="{!$ObjectType.Account.Fields.Name.Label}" />
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in lists|filter:query">
+                                <td class="alignCenter">
+                                    <apex:outputText value="{{$index + 1}}" />
+                                </td>
+                                <td>
+                                    <apex:outputLink value="/{{item.Id}}">
+                                        <apex:outputText value="{{item.Name}}" />
+                                    </apex:outputLink>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </apex:pageBlock>
+            </apex:form>
+        </div>
+    </div>
+    <apex:include pageName="JSforceSearchQueryMoreScript" />
+</apex:page>
