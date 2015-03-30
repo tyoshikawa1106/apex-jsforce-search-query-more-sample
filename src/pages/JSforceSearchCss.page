@@ -1,0 +1,56 @@
+<apex:page >
+    <style type="text/css">
+        #vf-page .inputForm {
+            width: 300px;
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+        #vf-page .alignCenter {
+            text-align: center;
+        }
+        <!-- Table CSS -->
+        #vf-page table {
+            width: 100%;
+        }
+        #vf-page .numberCol {
+            width:50px;
+        }
+        #vf-page .webparkList input {
+            background-color: transparent;
+            border-style: none;
+        }
+        #vf-page table.webparkList {
+            border-spacing: 0;
+            font-size:12px;
+        }
+        #vf-page table.webparkList th {
+            color: #fff;
+            padding: 8px 15px;
+            background: #258;
+            background:-moz-linear-gradient(rgba(34,85,136,0.7), rgba(34,85,136,0.9) 50%);
+            background:-webkit-gradient(linear, 100% 0%, 100% 50%, from(rgba(34,85,136,0.7)), to(rgba(34,85,136,0.9)));
+            font-weight: bold;
+            border-left:1px solid #258;
+            border-top:1px solid #258;
+            border-bottom:1px solid #258;
+            line-height: 120%;
+        }
+        #vf-page table.webparkList tr td {
+            padding: 8px 15px;
+            border-bottom: 1px solid #84b2e0;
+            border-left: 1px solid #84b2e0;
+        }
+        #vf-page table.webparkList tr {
+            background: #fff;
+        }
+        #vf-page table.webparkList tr:nth-child(2n+1) {
+            background: #f1f6fc;
+        }
+        #vf-page table.webparkList tr:last-child td {
+            box-shadow: 2px 2px 1px rgba(0,0,0,0.1);
+        }
+        #vf-page table.webparkList tr:hover {
+            background: #bbd4ee;
+        }
+    </style>
+</apex:page>

@@ -1,0 +1,32 @@
+<apex:page >
+    <script type="text/javascript">
+        beenFocused = true;
+    
+        function mainCtrl($scope){
+        
+            var conn = new jsforce.Connection({ accessToken: '{!$Api.Session_Id}' });
+            var soql = "SELECT Id, Name FROM Account WHERE AccountNumber = '' ORDER BY Name ASC";
+            
+            var records = [];
+            conn.query(soql)
+            .on("record", function(record) {
+                records.push(record);
+                // Add List
+                $scope.lists = records;
+                $scope.$apply();
+            })
+            .on("end", function(query) {
+                console.log("total in database : " + query.totalSize);
+                console.log("total fetched : " + query.totalFetched);
+                console.log(records.length);
+                // Add List
+                $scope.lists = records;
+                $scope.$apply();
+            })
+            .on("error", function(err) {
+                console.error(err);
+            })
+            .run({ autoFetch : true, maxFetch : 125000 }); // synonym of Query#execute();
+        }
+    </script>
+</apex:page>

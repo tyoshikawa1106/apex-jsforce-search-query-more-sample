@@ -1,7 +1,7 @@
 <apex:page >
-    <apex:includeScript value="{!$Resource.jQuery}" />
-    <apex:includeScript value="{!$Resource.Angular}" />
-    <apex:includeScript value="{!$Resource.JSforce}" />
+    <apex:includeScript value="{!URLFOR($Resource.jQuery, 'dist/jquery.min.js')}" />
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" />
+    <apex:includeScript value="{!URLFOR($Resource.JSforce, 'dist/jsforce.min.js')}" />
     <apex:include pageName="JSforceSearchCss" />
     <div id="vf-page" class="ng-app">
         <div ng-controller="mainCtrl">
